@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 7953577680372913094L;
-	private static final Logger logger = Logger.getLogger("HelloServlet");
+	private static final Logger logger = Logger.getLogger(HelloServlet.class.getSimpleName());
 	
 	@Override
 	public void init(ServletConfig config) throws ServletException {
