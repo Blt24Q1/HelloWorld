@@ -27,6 +27,30 @@
   	<param-value>himedia</param-value>
   </context-param>
   
+  <!-- Filter 등록 -->
+  <filter>
+  	<filter-name>EncodingFilter</filter-name>
+  	<filter-class>himedia.filter.EncodingFilter</filter-class>
+  	<!-- Filter 초기화 파라미터 -->
+  	<init-param>
+  	  <param-name>encoding</param-name>
+  	  <param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+  <filter>
+    <filter-name>LoggingFilter</filter-name>
+    <filter-class>himedia.filter.LoggingFilter</filter-class>
+  </filter>
+  
+  <!-- Filter Mapping -->
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern><!-- 모든 요청 -->
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>LoggingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   
   <!-- Servlet 등록 -->
   <servlet>
@@ -63,3 +87,8 @@
   	<location>/views/errors/errors.jsp</location>
   </error-page>
 </web-app>
+
+
+
+
+
